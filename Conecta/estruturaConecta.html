@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="./conecta.css">
+
+    <title>Conecta - Marketplace de Serviços Locais</title>
+</head>
+<body>
+
+    <!-- MENU PRINCIPAL -->
+    <header>
+        <h1>Conecta</h1>
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="#buscar">Buscar Serviços</a></li>
+                <li><a href="#cadastro">Seja um Profissional</a></li>
+                <li><a href="#login">Entrar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SEÇÃO PRINCIPAL -->
+    <main>
+        <section id="buscar">
+
+            <h2>Encontre os melhores profissionais da região</h2>
+            <form action="/search" method="GET">
+                <label for="search-service">O que você precisa hoje?</label>
+                <input type="search" id="search-service" name="q" placeholder="Ex: Eletricista, Encanador...">
+                <button type="submit">Buscar Profissionais</button>
+            </form>
+
+        </section>
+
+        <!-- PROFISSIONAIS DESTAQUE -->
+        <section aria-labelledby="prestadores-title">
+
+            <h2 id="prestadores-title">Profissionais Destaque em Pompeia e Região</h2>
+            
+            <article>
+                <img src="https://www.extraconsult.com.br/wp-content/uploads/2023/04/eletricista-de-manutencao.png" alt="Foto do perfil de João Eletricista">
+                <h3>João Eletricista</h3>
+                <p>Especialista em fiação residencial e manutenção de painéis elétricos. Atendimento rápido e seguro para urgências.</p>
+                <button type="button">Solicitar Orçamento</button>
+            </article>
+
+            <article>
+                <img src="https://img.freepik.com/fotos-gratis/mulher-de-alto-angulo-trabalhando-como-encanador_23-2150746386.jpg" alt="Foto do perfil de Maria Encanadora">
+                <h3>Maria Encanadora</h3>
+                <p>Solução definitiva para vazamentos e desentupimentos. Atendimento 24 horas para emergências hidráulicas residenciais.</p>
+                <button type="button">Solicitar Orçamento</button>
+            </article>
+
+            <article>
+                <img src="https://www.masterhousesolucoes.com.br/wp-content/themes/masterhouse2018/images/servicos/pintor/pintor-em-sao-vicente-sp.jpg" alt="Foto do perfil de Carlos Pintor">
+                <h3>Carlos Pintor</h3>
+                <p>Pintura interna e externa com acabamento impecável. Experiência com texturas, verniz e aplicação de papel de parede.</p>
+                <button type="button">Solicitar Orçamento</button>
+            </article>
+
+        </section>
+
+        <!-- CATEGORIAS POPULARES -->
+        <section aria-labelledby="categorias-title">
+
+            <h2 id="categorias-title">Categorias Populares</h2>
+            
+            <article>
+                <h3>Eletricista</h3>
+                <p>Instalações, manutenções e reparos elétricos residenciais e comerciais.</p>
+                <a href="/categoria/eletricista">Ver profissionais</a>
+            </article>
+
+            <article>
+                <h3>Encanador</h3>
+                <p>Soluções para vazamentos, desentupimentos e instalações hidráulicas.</p>
+                <a href="/categoria/encanador">Ver profissionais</a>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Conecta. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+/* Configuração básica */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f4f7f6;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #0056b3;
+    color: white;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Área de Busca */
+#buscar {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+#buscar h2 {
+    margin-bottom: 20px;
+    color: #0056b3;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+input[type="search"] {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button[type="submit"] {
+    padding: 12px 25px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    background-color: #e68a00;
+}
+
+/* Títulos das Seções */
+section h2 {
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #333;
+}
+
+section:not(#buscar) {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+/* Cartões de Profissionais*/
+article {
+    background: white;
+    padding: 25px;
+    width: 320px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+article img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #0056b3;
+}
+
+article h3 {
+    margin-bottom: 10px;
+    color: #222;
+}
+
+article p {
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+article button, article a {
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+
+article button:hover, article a:hover {
+    background-color: #004494;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    margin-top: 20px;
+}
