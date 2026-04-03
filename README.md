@@ -25,7 +25,7 @@ Para rodar os sites, siga este passo a passo simples:
 
 ---
 
-## 📌 Nota Importante sobre o Visual
+## Nota Importante sobre o Visual
 
 Conforme exigido: **os projetos agora contêm estilização em CSS**. 
 
