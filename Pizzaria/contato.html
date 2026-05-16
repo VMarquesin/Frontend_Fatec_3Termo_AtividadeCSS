@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pizzaria.css">
+    <link rel="stylesheet" href="./contato.css">
+    <title>Contato - Pizzaria</title>
+</head>
+<body>
+
+    <!-- Cabeçalho (idêntico ao da página principal) -->
+    <header>
+        <div>
+            <img src="https://www.creativefabrica.com/wp-content/uploads/2022/04/17/Pizza-Logo-Design-Graphics-29132095-1.jpg" alt="Logo da Pizzaria" class="logo">
+        </div>
+        <nav aria-label="Navegação principal">
+            <ul>
+                <li><a href="./estruturaPizzaria.html">Home</a></li>
+                <li><a href="./estruturaPizzaria.html">Menu</a></li>
+                <li><a href="./contato.html" class="nav-ativo">Contact</a></li>
+            </ul>
+            <button aria-label="Abrir menu">=</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Fale Conosco</h1>
+
+        <!-- Formulário de contato -->
+        <section class="contato-wrapper" aria-labelledby="contato-titulo">
+            <h2 id="contato-titulo" hidden>Formulário de Contato</h2>
+
+            <!-- Mensagem de sucesso (oculta por padrão, exibida via JS após envio) -->
+            <div id="msg-sucesso" class="msg-sucesso" role="alert" aria-live="polite" hidden>
+                ✅ Mensagem enviada com sucesso! Entraremos em contato em breve.
+            </div>
+
+            <form id="form-contato" novalidate>
+
+                <!-- Campo: Nome -->
+                <div class="campo">
+                    <label for="nome">Nome <span class="obrigatorio" aria-label="obrigatório">*</span></label>
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Seu nome completo"
+                        autocomplete="name"
+                        aria-describedby="erro-nome"
+                    >
+                    <!-- Mensagem de erro exibida dinamicamente pelo JS -->
+                    <span class="erro" id="erro-nome" role="alert" aria-live="polite"></span>
+                </div>
+
+                <!-- Campo: E-mail -->
+                <div class="campo">
+                    <label for="email">E-mail <span class="obrigatorio" aria-label="obrigatório">*</span></label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="seu@email.com"
+                        autocomplete="email"
+                        aria-describedby="erro-email"
+                    >
+                    <span class="erro" id="erro-email" role="alert" aria-live="polite"></span>
+                </div>
+
+                <!-- Campo: Mensagem -->
+                <div class="campo">
+                    <label for="mensagem">Mensagem <span class="obrigatorio" aria-label="obrigatório">*</span></label>
+                    <textarea
+                        id="mensagem"
+                        name="mensagem"
+                        placeholder="Escreva sua mensagem (mínimo 10 caracteres)..."
+                        rows="5"
+                        aria-describedby="erro-mensagem contador-mensagem"
+                    ></textarea>
+                    <!-- Contador de caracteres -->
+                    <span id="contador-mensagem" class="contador">0 / 10 caracteres mínimos</span>
+                    <span class="erro" id="erro-mensagem" role="alert" aria-live="polite"></span>
+                </div>
+
+                <button type="submit" id="btn-enviar">Enviar Mensagem</button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pizzaria Forno a Lenha. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./contato.js"></script>
+
+</body>
+</html>

@@ -19,7 +19,7 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Menu</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="./contato.html">Contact</a></li>
             </ul>
             <button aria-label="Abrir menu">=</button> 
         </nav>
@@ -27,40 +27,107 @@
 
     <main>
         <h1>Menu</h1>
-        
-        <section aria-labelledby="menu-title">
 
-            <h2 id="menu-title" hidden>Nossas Pizzas</h2> 
-            <!-- PIZZA MARGHERITA -->
-            <article>
-                <img src="https://www.estadao.com.br/resizer/v2/NIDA6IE6N5CTNAIWU365A257VA.jpg?quality=80&auth=5d90f714a8c8a131866e1f34fcaaab55df258ffa218a2baf915f5d9c4fa6f60b&width=720&height=410&smart=true" alt="Foto de uma Pizza Margherita">
-                <h3>Pizza Margherita</h3>
-                <p>Clássica italiana com molho de tomate artesanal, queijo mussarela derretido e folhas frescas de manjericão.</p>
-                <button type="button">Pedir agora</button>
-            </article>
+        <!-- Wrapper flex: menu de pizzas à esquerda, carrinho à direita -->
+        <div class="menu-carrinho-wrapper">
 
-            <!-- PIZZA CALABRESA -->
-            <article>
-                <img src="https://www.sabornamesa.com.br/media/k2/items/cache/513d7a0ab11e38f7bd117d760146fed3_XL.jpg" alt="Foto de uma Pizza de Calabresa">
-                <h3>Pizza Calabresa</h3>
-                <p>Fatias deliciosas de linguiça calabresa defumada, cebola fatiada, azeitonas pretas e orégano.</p>
-                <button type="button">Pedir agora</button>
-            </article>
+            <section aria-labelledby="menu-title">
 
-            <!-- PIZZA QUATRO QUEIJOS -->
-            <article>
-                <img src="https://claudia.abril.com.br/wp-content/uploads/2020/02/pizza-quatro-queijos-comitc3aa-umami.jpg?quality=70&strip=info&w=960" alt="Foto de uma Pizza Quatro Queijos">
-                <h3>Pizza Quatro Queijos</h3>
-                <p>Uma combinação perfeita de mussarela, provolone, parmesão e gorgonzola sobre nossa massa de fermentação natural.</p>
-                <button type="button">Pedir agora</button>
-            </article>
+                <h2 id="menu-title" hidden>Nossas Pizzas</h2> 
+                <!-- PIZZA MARGHERITA -->
+                <article>
+                    <img src="https://www.estadao.com.br/resizer/v2/NIDA6IE6N5CTNAIWU365A257VA.jpg?quality=80&auth=5d90f714a8c8a131866e1f34fcaaab55df258ffa218a2baf915f5d9c4fa6f60b&width=720&height=410&smart=true" alt="Foto de uma Pizza Margherita">
+                    <h3>Pizza Margherita</h3>
+                    <p>Clássica italiana com molho de tomate artesanal, queijo mussarela derretido e folhas frescas de manjericão.</p>
+                    <button type="button" data-nome="Pizza Margherita" data-preco="45.00">Pedir agora</button>
+                </article>
 
-        </section>
+                <!-- PIZZA CALABRESA -->
+                <article>
+                    <img src="https://www.sabornamesa.com.br/media/k2/items/cache/513d7a0ab11e38f7bd117d760146fed3_XL.jpg" alt="Foto de uma Pizza de Calabresa">
+                    <h3>Pizza Calabresa</h3>
+                    <p>Fatias deliciosas de linguiça calabresa defumada, cebola fatiada, azeitonas pretas e orégano.</p>
+                    <button type="button" data-nome="Pizza Calabresa" data-preco="39.90">Pedir agora</button>
+                </article>
+
+                <!-- PIZZA QUATRO QUEIJOS -->
+                <article>
+                    <img src="https://claudia.abril.com.br/wp-content/uploads/2020/02/pizza-quatro-queijos-comitc3aa-umami.jpg?quality=70&strip=info&w=960" alt="Foto de uma Pizza Quatro Queijos">
+                    <h3>Pizza Quatro Queijos</h3>
+                    <p>Uma combinação perfeita de mussarela, provolone, parmesão e gorgonzola sobre nossa massa de fermentação natural.</p>
+                    <button type="button" data-nome="Pizza Quatro Queijos" data-preco="52.00">Pedir agora</button>
+                </article>
+
+                <article>
+                    <img src="https://www.galbani.com.br/wp-content/uploads/2024/10/pizza-napolitana.jpg" alt="Foto de uma Pizza Napolitana">
+                    <h3>Pizza Napolitana</h3>
+                    <p>O sabor é uma combinação equilibrada entre a acidez do molho de tomate, a cremosidade suave do queijo e o toque aromático do manjericão fresco.</p>
+                    <button type="button" data-nome="Pizza Napolitana" data-preco="45.00">Pedir agora</button>
+                </article>
+
+            </section>
+
+            <!-- CARRINHO DE COMPRAS -->
+            <aside id="carrinho" aria-label="Carrinho de compras">
+                <h2>Carrinho</h2>
+
+                <!-- Mensagem exibida quando o carrinho está vazio -->
+                <p id="mensagem-vazio">Seu carrinho está vazio.</p>
+
+                <!-- Lista de itens adicionados ao carrinho (populada via JS) -->
+                <ul id="lista-carrinho"></ul>
+
+                <!-- Total calculado automaticamente -->
+                <div id="total-carrinho">
+                    Total: <span id="valor-total">R$ 0,00</span>
+                </div>
+
+                <!-- Botão que abre o modal de resumo do pedido -->
+                <!-- Desabilitado por padrão; JS habilita quando há itens no carrinho -->
+                <button type="button" id="btn-finalizar" disabled>Finalizar Pedido</button>
+            </aside>
+
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2026 Pizzaria Forno a Lenha. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- =====================================================
+         MODAL: Resumo do Pedido
+         Oculto por padrão via CSS (.modal sem .ativo)
+         ===================================================== -->
+    <div class="modal" id="modal-resumo" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+
+        <!-- Overlay escurecido — clique fora fecha o modal -->
+        <div class="modal-overlay" id="modal-overlay"></div>
+
+        <!-- Caixa central do modal -->
+        <div class="modal-caixa">
+
+            <h2 id="modal-titulo">Resumo do Pedido</h2>
+
+            <!-- Lista de pizzas preenchida dinamicamente via JS -->
+            <ul id="modal-lista"></ul>
+
+            <!-- Quantidade total de pizzas e soma final -->
+            <div class="modal-totais">
+                <p>Quantidade total: <strong id="modal-quantidade">0</strong> pizza(s)</p>
+                <p>Soma final: <strong id="modal-total">R$ 0,00</strong></p>
+            </div>
+
+            <!-- Botões de ação do modal -->
+            <div class="modal-botoes">
+                <button type="button" id="btn-confirmar">Confirmar</button>
+                <button type="button" id="btn-fechar-modal">Cancelar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Lógica do carrinho de compras -->
+    <script src="./pizzaria.js"></script>
 
 </body>
 </html>

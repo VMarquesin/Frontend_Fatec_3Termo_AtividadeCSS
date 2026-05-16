@@ -163,3 +163,282 @@ footer {
     font-weight: bold;
     border-top: 3px solid #ff9800; 
 }
+
+/* ============================================================
+   WRAPPER: menu de pizzas + carrinho lado a lado
+   ============================================================ */
+.menu-carrinho-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* A section de pizzas ocupa o espaço restante */
+.menu-carrinho-wrapper > section {
+    flex: 1;
+}
+
+/* ============================================================
+   SIDEBAR DO CARRINHO
+   ============================================================ */
+#carrinho {
+    width: 320px;
+    /* Gruda no topo ao rolar a página */
+    position: sticky;
+    top: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    padding: 25px;
+}
+
+#carrinho h2 {
+    font-size: 1.4rem;
+    color: #4b2c1d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #d32f2f;
+}
+
+/* Mensagem de carrinho vazio */
+#mensagem-vazio {
+    font-style: italic;
+    color: #999;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Lista de itens do carrinho */
+#lista-carrinho {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+}
+
+/* Cada item do carrinho */
+.item-carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0e6db;
+    font-size: 0.95rem;
+}
+
+.item-nome {
+    flex: 1;
+    color: #333;
+}
+
+.item-preco {
+    font-weight: bold;
+    color: #4b2c1d;
+    white-space: nowrap;
+}
+
+/* Botão "Remover" de cada item */
+.btn-remover {
+    padding: 5px 10px;
+    background-color: #d32f2f;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-remover:hover {
+    background-color: #b71c1c;
+}
+
+/* Linha de total */
+#total-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 2px solid #d32f2f;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#valor-total {
+    color: #d32f2f;
+    font-size: 1.2rem;
+}
+
+/* ============================================================
+   BOTÃO "FINALIZAR PEDIDO" na sidebar do carrinho
+   ============================================================ */
+#btn-finalizar {
+    width: 100%;
+    margin-top: 16px;
+    padding: 14px;
+    background-color: #388e3c;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease;
+}
+
+#btn-finalizar:hover:not(:disabled) {
+    background-color: #2e7d32;
+}
+
+/* Estado desabilitado enquanto o carrinho está vazio */
+#btn-finalizar:disabled {
+    background-color: #bdbdbd;
+    cursor: not-allowed;
+}
+
+/* ============================================================
+   MODAL: Resumo do Pedido
+   ============================================================ */
+
+/* Oculto por padrão — a classe .ativo o exibe */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.ativo {
+    display: flex;
+}
+
+/* Overlay escurecido que cobre toda a tela atrás da caixa */
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Caixa branca central — fica acima do overlay */
+.modal-caixa {
+    position: relative;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    padding: 35px;
+    width: 90%;
+    max-width: 480px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.modal-caixa h2 {
+    font-size: 1.6rem;
+    color: #4b2c1d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #d32f2f;
+}
+
+/* Lista de itens do modal */
+#modal-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+/* Cada linha: sabor | quantidade | subtotal */
+.modal-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0e6db;
+    font-size: 0.95rem;
+}
+
+.modal-item-nome {
+    flex: 1;
+    color: #333;
+}
+
+.modal-item-qtd {
+    font-weight: bold;
+    color: #888;
+    min-width: 28px;
+    text-align: center;
+}
+
+.modal-item-subtotal {
+    font-weight: bold;
+    color: #4b2c1d;
+    white-space: nowrap;
+}
+
+/* Bloco de totais (quantidade + soma final) */
+.modal-totais {
+    margin: 16px 0 24px;
+    padding: 14px;
+    background-color: #fff9f1;
+    border-radius: 8px;
+    border: 1px solid #f0e6db;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.modal-totais strong {
+    color: #d32f2f;
+}
+
+/* Botões de ação do modal */
+.modal-botoes {
+    display: flex;
+    gap: 12px;
+}
+
+.modal-botoes button {
+    flex: 1;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease;
+}
+
+/* "Confirmar" — verde */
+#btn-confirmar {
+    background-color: #388e3c;
+    color: #fff;
+}
+
+#btn-confirmar:hover {
+    background-color: #2e7d32;
+}
+
+/* "Fechar Modal" — neutro */
+#btn-fechar-modal {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+#btn-fechar-modal:hover {
+    background-color: #bdbdbd;
+}

@@ -1,0 +1,157 @@
+/* ============================================================
+   PÁGINA DE CONTATO — estilos específicos
+   (herda reset, header, nav e footer do pizzaria.css)
+   ============================================================ */
+
+/* Título da página */
+main h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: #d32f2f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Link ativo no nav */
+.nav-ativo {
+    color: #ff9800 !important;
+    border-bottom: 2px solid #ff9800;
+    padding-bottom: 2px;
+}
+
+/* Wrapper centralizado do formulário */
+.contato-wrapper {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+}
+
+/* ============================================================
+   MENSAGEM DE SUCESSO
+   ============================================================ */
+.msg-sucesso {
+    background-color: #e8f5e9;
+    border: 1px solid #388e3c;
+    color: #2e7d32;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ============================================================
+   CAMPOS DO FORMULÁRIO
+   ============================================================ */
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.campo label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #4b2c1d;
+    margin-bottom: 6px;
+}
+
+/* Asterisco obrigatório */
+.obrigatorio {
+    color: #d32f2f;
+    margin-left: 2px;
+}
+
+/* Inputs e textarea compartilham o mesmo visual */
+.campo input,
+.campo textarea {
+    padding: 12px 14px;
+    border: 2px solid #d8c3b0;
+    border-radius: 8px;
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #d32f2f;
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.15);
+}
+
+/* Estado inválido (adicionado via JS) */
+.campo-invalido {
+    border-color: #d32f2f !important;
+    background-color: #fff5f5 !important;
+}
+
+/* Estado válido (adicionado via JS) */
+.campo-valido {
+    border-color: #388e3c !important;
+    background-color: #f9fff9 !important;
+}
+
+/* ============================================================
+   MENSAGENS DE ERRO
+   ============================================================ */
+.erro {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.88rem;
+    color: #d32f2f;
+    min-height: 1.2em; /* reserva espaço para evitar salto de layout */
+}
+
+/* ============================================================
+   CONTADOR DE CARACTERES
+   ============================================================ */
+.contador {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.82rem;
+    color: #888;
+    text-align: right;
+    transition: color 0.2s ease;
+}
+
+/* Fica verde quando o mínimo é atingido */
+.contador-ok {
+    color: #388e3c;
+    font-weight: bold;
+}
+
+/* ============================================================
+   BOTÃO DE ENVIO
+   ============================================================ */
+#btn-enviar {
+    width: 100%;
+    padding: 16px;
+    background-color: #d32f2f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    margin-top: 8px;
+}
+
+#btn-enviar:hover {
+    background-color: #b71c1c;
+    transform: translateY(-2px);
+}
+
+#btn-enviar:active {
+    transform: translateY(0);
+}
